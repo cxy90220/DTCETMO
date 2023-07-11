@@ -19,3 +19,5 @@ This is the code of C&G paper: Real-time self-supervised tone curve estimation f
 ```python test.py ```
 ## Train:
 ```python train.py ```
+## Contact
+If you have any questions, please contact Xiyu Chen at chenxiyu@nimte.ac.cn or Jiayan Zhuang at zhaungjiayan@nimte.ac.cn.
