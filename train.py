@@ -91,7 +91,7 @@ def train(config):
             rl, gl, bl = torch.split(img_ldr * 255, 1, dim=1)
             rh, gh, bh = torch.split(img_hdr, 1, dim=1)
             loss_fsitm = (lfsitm(rl, rh) + lfsitm(gl, gh) + lfsitm(bl, bh)) / 3
-            loss = w*loss_tmqi + (1-w)*loss_fsitm
+            loss = w*loss_tmqi + (2.0-w)*loss_fsitm
             # if torch.isnan(loss_tmqi).any():
             #     optimizer.zero_grad()
             #     continue
@@ -117,14 +117,14 @@ if __name__ == "__main__":
     parser.add_argument('--weight_decay', type=float, default=0.0001)
     parser.add_argument('--grad_clip_norm', type=float, default=0.1)
     parser.add_argument('--num_epochs', type=int, default=400)
-    parser.add_argument('--train_batch_size', type=int, default=4)
+    parser.add_argument('--train_batch_size', type=int, default=8)
     parser.add_argument('--num_workers', type=int, default=16)
     parser.add_argument('--display_iter', type=int, default=10)
     parser.add_argument('--snapshots_folder', type=str, default="snapshots/")
     parser.add_argument('--load_pretrain', type=bool, default=False)
     parser.add_argument('--pretrain_dir', type=str, default="snapshots/Epoch399.pth")
     parser.add_argument('--train_imgsize', type=int, default=512)
-    parser.add_argument('--loss_weight', type=float, default=0.8)
+    parser.add_argument('--loss_weight', type=float, default=1.5)
 
     configure = parser.parse_args()
     if not os.path.exists(configure.snapshots_folder):
