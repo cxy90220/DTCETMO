@@ -16,7 +16,7 @@ This is the code of C&G paper: Real-time self-supervised tone curve estimation f
 ├── dataloader.py
 ```
 ## Preparations
-Download [train dataset](https://www.kaggle.com/datasets/landrykezebou/lvzhdr-tone-mapping-benchmark-dataset-tmonet)(LVZ-HDR Dataset.egg) and [test dataset](https://github.com/zhangn77/LTMN)(test_data).
+Download [train dataset](https://www.kaggle.com/datasets/landrykezebou/lvzhdr-tone-mapping-benchmark-dataset-tmonet)(LVZ-HDR Dataset.egg) and [test dataset](https://github.com/zhangn77/LTMN)(Testing Data).
 ## Test:
 ```python test.py ```
 ## Train:
